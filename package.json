@@ -1,6 +1,6 @@
 {
   "name": "@kvpendergast/theonering",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A javascript sdk for the one ring api",
   "main": "index.js",
   "scripts": {
