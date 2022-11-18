@@ -1,0 +1,14 @@
+{
+  "name": "@kvpendergast/theonering",
+  "version": "1.0.4",
+  "description": "A javascript sdk for the one ring api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Pendergast",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
+}
