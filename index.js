@@ -6,8 +6,8 @@ class One {
         this.apiKey = apiKey
     }
 
-    client(path) {
-        const response = axios({
+    async client(path) {
+        const response = await axios({
             method: 'get',
             url: `https://the-one-api.dev/v2/${path}`,
             headers: {
@@ -15,71 +15,69 @@ class One {
             }
         })
 
-        return response
+        return {
+            results: response.data.docs,
+            total: response.data.total,
+            limit: response.data.limit,
+            offset: response.data.offset,
+            page: response.data.page,
+            pages: response.data.pages
+        }
     }
 
     getBooks = async (data) => { 
-        const q = queryBuilder(data)
-        const url = 'book' + q
-
         try {
-            const response = await this.client(url)
+            const q = queryBuilder(data)
+            const url = 'book' + q
 
-            return response.data;
+            return await this.client(url)
         } catch (err) {
-            console.log('err ', err)
+            return err.response ? err.response.data : err
         }
     }
 
     getMovies = async (data) => { 
-        const q = queryBuilder(data)
-        const url = 'movie' + q
-
         try {
-            const response = await this.client(url)
+            const q = queryBuilder(data)
+            const url = 'movie' + q
 
-            return response.data;
+            return await this.client(url)
         } catch (err) {
-            console.log('err ', err)
+            return err.response ? err.response.data : err
         }
     }
 
     getCharacters = async (data) => { 
-        const q = queryBuilder(data)
-        const url = 'character' + q
-
         try {
-            const response = await this.client(url)
+            const q = queryBuilder(data)
+            const url = 'character' + q
 
-            return response.data;
+            return await this.client(url)
+
         } catch (err) {
-            console.log('err ', err)
+            return err.response ? err.response.data : err
         }
     }
 
     getQuotes = async (data) => { 
-        const q = queryBuilder(data)
-        const url = 'quote' + q
-
         try {
-            const response = await this.client(url)
+            const q = queryBuilder(data)
+            const url = 'quote' + q
 
-            return response.data;
+            return await this.client(url)
         } catch (err) {
-            console.log('err ', err)
+            return err.response ? err.response.data : err
         }
     }
 
     getChapters = async (data) => { 
-        const q = queryBuilder(data)
-        const url = 'chapter' + q
-
         try {
-            const response = await this.client(url)
+            const q = queryBuilder(data)
+            const url = 'chapter' + q
 
-            return response.data;
+            return await this.client(url)
         } catch (err) {
-            console.log('err ', err)
+            return err.response ? err.response.data : err
         }
     }
 }

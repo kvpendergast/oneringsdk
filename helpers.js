@@ -1,4 +1,6 @@
 const queryBuilder = (query) => {
+    if (typeof query === 'string') throw 'Must be an object containing pagination, sort, or filter options.';
+    if (!query) return '';
     const { id, pagination, sort, filter } = query;
     let q = ''
 
