@@ -22,7 +22,6 @@ const queryBuilder = (query) => {
     if (filter) {
         if (q) q = q + '&'
         if (filter.include) {
-            console.log('filter ', filter)
             if (!Array.isArray(filter.include.value)) q = q + filter.include.parameter + '=' + filter.include.value
             if (Array.isArray(filter.include.value)) q = q + filter.include.parameter + '=' + filter.include.value.join()
         }
