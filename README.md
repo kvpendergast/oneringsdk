@@ -39,7 +39,7 @@ run()
 ```
 
 ## All Functions
-We can do more than grab some movies! Here's a list of all the basic resource routes. All resources return a list of objects with pagination metadata.
+We can do more than grab some movies! Here's a list of all the basic resource methods. All resources return a list of objects with pagination metadata.
 
 - `getBooks` 
 - `getMovies`
