@@ -41,11 +41,11 @@ run()
 ## All Functions
 We can do more than grab some movies! Here's a list of all the basic resource routes. All resources return a list of objects with pagination metadata.
 
-`getBooks` 
-`getMovies`
-`getQuotes`
-`getChapters`
-`getCharacters`
+- `getBooks` 
+- `getMovies`
+- `getQuotes`
+- `getChapters`
+- `getCharacters`
 
 ## Pagination, Filtering, and Sorting
 This SDK does have support for basic pagination, sorting, and filtering. You can use these in your requests by creating a query object and passing it as a parameter for the resource you're calling.
